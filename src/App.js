@@ -1,10 +1,9 @@
-import Nav from "./Components/Nav"
-import "./Styles/App.scss"
+import "./styles/app.scss"
 
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <h1>Ayush Rameja</h1>
     </div>
   )
 }
