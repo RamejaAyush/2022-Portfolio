@@ -1,0 +1,32 @@
+@import url(./index.scss);
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--cl-black);
+    color: var(--cl-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../assets/noise.png);
+    background-position: center center;
+    background-size: cover;
+
+    h1 {
+      font-family: var(--font-trade);
+      font-size: 80px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 60px;
+      }
+    
+      @media screen and (max-width: 480px) {
+        font-size: 40px;
+      }
+    }
+}
