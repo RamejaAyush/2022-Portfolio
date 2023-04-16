@@ -23,13 +23,13 @@ const App = () => {
       .fromTo(
         logo.current,
         {
-          // duration: 0.5,
-          duration: 0.1,
+          duration: 0.5,
           opacity: 0,
           y: 50,
           scale: 0.9,
         },
         {
+          duration: 1,
           opacity: 1,
           y: 0,
           scale: 1.2,
@@ -38,18 +38,7 @@ const App = () => {
       .to(
         loaderRef.current,
         {
-          // duration: 2.5,
-          duration: 0.1,
-          backgroundColor: '#1F002B',
-          ease: 'power2.out',
-        },
-        '+=0.5'
-      )
-      .to(
-        loaderRef.current,
-        {
-          // duration: 1,
-          duration: 0.1,
+          duration: 0.5,
           backgroundColor: '#000000',
           ease: 'power2.out',
         },
@@ -58,7 +47,6 @@ const App = () => {
       .to(
         logo.current,
         {
-          // duration: 0.5,
           duration: 0.1,
           y: 50,
           opacity: 0,
@@ -69,7 +57,6 @@ const App = () => {
       )
       .from('.home', {
         opacity: 0,
-        // duration: 1,
         duration: 0.1,
         y: -10,
         ease: 'power2.out',

@@ -13,6 +13,14 @@ const Home = () => {
         <div className="profile-photo">
           <img src={profilePhoto} alt="Ayush Rameja" />
         </div>
+        <div className="btns">
+          <a data-content="See My Work" href="#">
+            See My Work
+          </a>
+          <a data-content="Contact Me" href="#">
+            Contact Me
+          </a>
+        </div>
         <div className="headline">
           <div className="text-wrapper">
             <p>I Love to create</p>
