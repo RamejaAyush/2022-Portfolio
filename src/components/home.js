@@ -1,5 +1,6 @@
 import Nav from './Nav';
-import '../styles/home.scss';
+import '../Styles/home.scss';
+import { Link } from 'react-router-dom';
 import profilePhoto from '../assets/image.png';
 
 const Home = () => {
@@ -14,12 +15,12 @@ const Home = () => {
           <img src={profilePhoto} alt="Ayush Rameja" />
         </div>
         <div className="btns">
-          <a data-content="See My Work" href="#">
+          <Link data-content="See My Work" to="#">
             See My Work
-          </a>
-          <a data-content="Contact Me" href="#">
+          </Link>
+          <Link data-content="Contact Me" to="#">
             Contact Me
-          </a>
+          </Link>
         </div>
         <div className="headline">
           <div className="text-wrapper">
@@ -28,8 +29,19 @@ const Home = () => {
               <span className="dm">Unique</span> &{' '}
               <span className="dm">Appealing</span>
             </p>
-            <p>Website and Designs</p>
+            <p>Websites and Designs</p>
           </div>
+        </div>
+        <div className="introduction">
+          <h1>
+            Hi, I'm <span className="bold">Ayush Rameja</span>, Currently
+            working as a <span className="bold">Web Developer </span>
+            at <span className="bold">Accenture.</span> I've{' '}
+            <span className="bold">3+ years</span> of Industrial experience in
+            Web Development and UI/UX with companies like{' '}
+            <span className="bold">Google, CHUBB, Nokia </span>
+            and many more.
+          </h1>
         </div>
       </div>
     </>

@@ -1,13 +1,14 @@
-import '../styles/nav.scss';
+import '../Styles/nav.scss';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
     <nav>
       <div className="links">
-        <a href="#">home</a>
-        <a href="#">projects</a>
-        <a href="#">contacts</a>
-        <a href="#">social</a>
+        <Link to="#">home</Link>
+        <Link to="#projects">projects</Link>
+        <Link to="#contact">contacts</Link>
+        <Link to="/links">Links</Link>
       </div>
     </nav>
   );

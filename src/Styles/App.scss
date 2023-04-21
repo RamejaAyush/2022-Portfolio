@@ -1,32 +1,123 @@
 @import url(./index.scss);
 
 .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--cl-black);
+  color: var(--cl-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../assets/noise.png);
+  background-position: center center;
+  background-size: cover;
+
+  h1 {
+    font-family: var(--font-trade);
+    font-size: 80px;
+
+    @media screen and (max-width: 768px) {
+      font-size: 60px;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 40px;
+    }
+  }
+}
+
+.under-maintenance {
+  width: 100%;
+  height: 100vh;
+  background: url(../assets/texture.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  place-items: center;
+
+  .um-wrapper {
     width: 100%;
-    background-color: var(--cl-black);
-    color: var(--cl-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url(../assets/noise.png);
-    background-position: center center;
-    background-size: cover;
+    height: 90%;
+    padding: 5%;
+    border: 1px solid var(--cl-purple);
+    background: rgba(143, 22, 146, 0.14);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
 
-    h1 {
-      font-family: var(--font-trade);
-      font-size: 80px;
+    .status {
+      width: 100%;
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
 
-      @media screen and (max-width: 768px) {
-        font-size: 60px;
-      }
-    
-      @media screen and (max-width: 480px) {
-        font-size: 40px;
+      img {
+        width: 100%;
       }
     }
+
+    .btns {
+      width: 100%;
+      height: 22vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+
+      a {
+        position: relative;
+        z-index: 2;
+        border: 1px solid var(--cl-purple);
+        padding: 10px;
+        width: 90%;
+        display: grid;
+        place-items: center;
+        text-decoration: none;
+        color: transparent;
+        font-family: var(--font-dm);
+        font-size: 25px;
+        background-color: var(--cl-purple);
+
+        &::before {
+          content: attr(data-content);
+          position: absolute;
+          z-index: -2;
+          color: var(--cl-white);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          transform: translate(5px, -5px);
+          background-color: var(--cl-black);
+          border: 1px solid var(--cl-purple);
+          transition: all 250ms ease-in-out;
+        }
+
+        &:hover::before {
+          transform: translate(0px, 0px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1420px) {
+  .under-maintenance {
+    .um-wrapper {
+      width: 40%;
+    }
+  }
 }
