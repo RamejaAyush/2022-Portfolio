@@ -19,3 +19,9 @@
   --product-sans-Bold: 'Product Sans Bold', sans-serif;
   --product-sans-black: 'Product Sans Black', sans-serif;
 }
+
+body {
+  background-color: var(--cl-black);
+  color: var(--cl-white);
+  font-family: var(--product-sans-regular);
+}
