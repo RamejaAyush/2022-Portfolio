@@ -1,1 +1,1 @@
-# Ayush Rameja's Portfolio (Materail Theme)
+# Ayush Rameja's Portfolio (Material Theme)
