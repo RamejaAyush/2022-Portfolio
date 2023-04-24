@@ -1,9 +1,15 @@
 import { gsap } from 'gsap';
 import '../Styles/Homepage.scss';
+import Nav from '../Components/Nav';
+import { Link } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 
 const Homepage = () => {
+  const homeSection = useRef(null);
+  const ctaBtn = useRef(null);
+  const headline = useRef(null);
   const loaderTitle = useRef(null);
+  const nameHeadline = useRef(null);
   const loaderSubTitle = useRef(null);
   const [loading, setLoading] = useState(true);
 
@@ -21,8 +27,7 @@ const Homepage = () => {
           duration: 1,
           opacity: 0,
           y: 50,
-          ease: 'power3.out',
-          delay: 0.5,
+          ease: 'power3.in',
         },
         {
           duration: 1,
@@ -39,16 +44,14 @@ const Homepage = () => {
           opacity: 0,
           y: 50,
           ease: 'power3.in',
-          delay: 0.5,
         },
         {
           duration: 1,
           opacity: 1,
           y: 0,
           ease: 'power3.in',
-          delay: 0.5,
         },
-        '-=1.5'
+        '-=0.5'
       )
       .to(
         loaderTitle.current,
@@ -72,6 +75,73 @@ const Homepage = () => {
       );
   });
 
+  useEffect(() => {
+    const timeline = gsap.timeline();
+
+    timeline
+      .fromTo(
+        homeSection.current,
+        {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          ease: 'power3.in',
+        },
+        {
+          duration: 1,
+          opacity: 1,
+          y: 0,
+          ease: 'power3.out',
+        }
+      )
+      .fromTo(
+        headline.current,
+        {
+          duration: 1,
+          opacity: 0,
+          y: 50,
+          ease: 'power3.in',
+        },
+        {
+          duration: 1,
+          opacity: 1,
+          y: 0,
+          ease: 'power3.out',
+        }
+      )
+      .fromTo(
+        nameHeadline.current,
+        {
+          duration: 0.5,
+          opacity: 0,
+          y: 50,
+          ease: 'power3.in',
+        },
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          ease: 'power3.out',
+        },
+        '-=0.5'
+      )
+      .fromTo(
+        ctaBtn.current,
+        {
+          duration: 0.5,
+          opacity: 0,
+          y: 50,
+          ease: 'power3.in',
+        },
+        {
+          duration: 0.5,
+          opacity: 1,
+          y: 0,
+          ease: 'power3.out',
+        }
+      );
+  });
+
   return loading ? (
     <div className="loader">
       <h1 className="logo" ref={loaderTitle}>
@@ -83,7 +153,34 @@ const Homepage = () => {
     </div>
   ) : (
     <div className="homepage">
-      <h2>Homepage</h2>
+      <Nav />
+      <div ref={homeSection} className="landing-page">
+        <div className="nav-spacing"></div>
+        <div className="page-content">
+          <div className="headline">
+            <h1 ref={headline}>
+              Creating<br></br>
+              User Experience<br></br> <span className="yellow">Unique</span> &
+              <span className="yellow"> Clean</span>
+            </h1>
+          </div>
+          <div className="about">
+            <div ref={nameHeadline} className="title">
+              <h1>Ayush Rameja</h1>
+              <p>Web Developer • UI Designer</p>
+            </div>
+            <div ref={ctaBtn} className="info-cta">
+              <p>
+                A creative developer with a proven track record of delivering
+                unique and visually appealing websites and designs.
+              </p>
+              <div className="cta">
+                <Link to="#contact">Let's Work</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
