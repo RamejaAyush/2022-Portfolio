@@ -1,22 +1,24 @@
-import './Styles/Global.scss';
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-const Links = lazy(() => import('./Pages/Links'));
-const Homepage = lazy(() => import('./Pages/Homepage'));
-const NotFound = lazy(() => import('./Pages/NotFound'));
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={null}>
-        <Routes>
-          <Route exact path="/" Component={Homepage} />
-          <Route path="/links" Component={Links} />
-          <Route path="*" Component={NotFound} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
 
