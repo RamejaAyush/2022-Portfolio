@@ -1,0 +1,31 @@
+@import url(./_fonts.scss);
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --light-purple: #a100ac;
+  --purple: #9e00ff;
+
+  --product-sans-thin: 'Product Sans Thin', sans-serif;
+  --product-sans-light: 'Product Sans Light', sans-serif;
+  --product-sans-regular: 'Product Sans Regular', sans-serif;
+  --product-sans-Medium: 'Product Sans Medium', sans-serif;
+  --product-sans-Bold: 'Product Sans Bold', sans-serif;
+  --product-sans-black: 'Product Sans Black', sans-serif;
+  --black-ops: 'Black Ops One', cursive;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+  font-family: var(--product-sans-regular);
+}
